@@ -28,4 +28,9 @@ public class Pet extends Animal {
     public void addCommand(Command command) {
         commandsList.add(command);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", getAnimalName(), getAnimalType(), getAnimalBirthday().toString());
+    }
 }
