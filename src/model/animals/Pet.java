@@ -33,4 +33,10 @@ public class Pet extends Animal {
     public String toString() {
         return String.format("%s %s %s", getAnimalName(), getAnimalType(), getAnimalBirthday().toString());
     }
+
+    public void showCommands() {
+        for (Command command : commandsList) {
+            System.out.println(command.getCommandName());
+        }
+    }
 }
