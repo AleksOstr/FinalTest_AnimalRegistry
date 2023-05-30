@@ -1,6 +1,9 @@
 import model.Registry;
+import model.animals.PackAnimal;
+import model.animals.Pet;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Controller {
     Registry registry;
@@ -9,12 +12,12 @@ public class Controller {
         this.registry = registry;
     }
 
-    public void showPets() {
-        registry.showPets();
+    public ArrayList<Pet> getPets() {
+        return registry.getPets();
     }
 
-    public void showPackAnimals() {
-        registry.showPackAnimals();
+    public ArrayList<PackAnimal> getPackAnimals() {
+        return registry.getPackAnimals();
     }
 
     public void addNewAnimal(String animalName, String animalType, LocalDate animalBirthday) {
