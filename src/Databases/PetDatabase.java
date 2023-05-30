@@ -4,7 +4,7 @@ import model.animals.Pet;
 
 import java.util.ArrayList;
 
-public class PetDatabase extends Database<Pet>{
+public class PetDatabase extends Database<Pet> {
     @Override
     public ArrayList<Pet> getDatabase() {
         return super.getDatabase();
@@ -15,8 +15,5 @@ public class PetDatabase extends Database<Pet>{
         super.add(value);
     }
 
-    @Override
-    public void showDatabase() {
-        super.showDatabase();
-    }
+
 }

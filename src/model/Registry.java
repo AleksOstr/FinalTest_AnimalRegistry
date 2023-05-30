@@ -27,14 +27,13 @@ public class Registry {
         this.reader = new Reader(availablePetsFileName, availablePackAnimalsFilename);
     }
 
-    public void showPets() {
-        petDB.showDatabase();
+    public ArrayList<Pet> getPets() {
+        return petDB.getDatabase();
     }
 
-    public void showPackAnimals() {
-        packAnimalDB.showDatabase();
+    public ArrayList<PackAnimal> getPackAnimals() {
+        return packAnimalDB.getDatabase();
     }
-
     public void addNewAnimal(String animalName, String animalType, LocalDate animalBIrthday) {
         ArrayList<String> availablePets = reader.getAvailablePets();
         ArrayList<String> availablePackAnimals = reader.getAvailablePackAnimals();

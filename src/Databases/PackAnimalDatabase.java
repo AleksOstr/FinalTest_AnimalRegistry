@@ -15,8 +15,5 @@ public class PackAnimalDatabase extends Database<PackAnimal> {
         super.add(value);
     }
 
-    @Override
-    public void showDatabase() {
-        super.showDatabase();
-    }
+
 }

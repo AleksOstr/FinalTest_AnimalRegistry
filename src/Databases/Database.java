@@ -13,9 +13,5 @@ public abstract class Database<T> {
         database.add(value);
     }
 
-    public void showDatabase() {
-        for (T value:database) {
-            System.out.println(value.toString());
-        }
-    }
+
 }
