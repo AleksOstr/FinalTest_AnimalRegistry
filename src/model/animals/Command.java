@@ -10,4 +10,9 @@ public class Command {
     public String getCommandName() {
         return commandName;
     }
+
+    @Override
+    public String toString() {
+        return commandName;
+    }
 }

@@ -25,6 +25,10 @@ public class Pet extends Animal {
         return super.getAnimalBirthday();
     }
 
+    public ArrayList<Command> getCommandsList() {
+        return commandsList;
+    }
+
     public void addCommand(Command command) {
         commandsList.add(command);
     }
@@ -34,9 +38,4 @@ public class Pet extends Animal {
         return String.format("%s %s %s", getAnimalName(), getAnimalType(), getAnimalBirthday().toString());
     }
 
-    public void showCommands() {
-        for (Command command : commandsList) {
-            System.out.println(command.getCommandName());
-        }
-    }
 }

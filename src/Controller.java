@@ -1,4 +1,5 @@
 import model.Registry;
+import model.animals.Command;
 import model.animals.PackAnimal;
 import model.animals.Pet;
 
@@ -18,6 +19,14 @@ public class Controller {
 
     public ArrayList<PackAnimal> getPackAnimals() {
         return registry.getPackAnimals();
+    }
+
+    public ArrayList<Command> getPetCommands(String petName) {
+        return registry.getPetCommands(petName);
+    }
+
+    public ArrayList<Command> getPackAnimalCommands(String packAnimalName) {
+        return registry.getPackAnimalCommands(packAnimalName);
     }
 
     public void addNewAnimal(String animalName, String animalType, LocalDate animalBirthday) {

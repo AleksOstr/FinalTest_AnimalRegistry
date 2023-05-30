@@ -82,12 +82,12 @@ public class Registry {
         throw new RuntimeException("Pack animal not found");
     }
 
-    public void showPetCommands(String petName) {
-        findPetByName(petName).showCommands();
+    public ArrayList<Command> getPetCommands(String petName) {
+        return findPetByName(petName).getCommandsList();
     }
 
-    public void showPackAnimalCommands(String packAnimalName) {
-        findPackAnimalByName(packAnimalName).showCommands();
+    public ArrayList<Command> getPackAnimalCommands(String packAnimalName) {
+        return findPackAnimalByName(packAnimalName).getCommandsList();
     }
 
     private class Reader {
