@@ -41,45 +41,45 @@ public class Registry {
             petDB.add(new Pet(animalName, animalType, animalBIrthday));
         } else if (availablePackAnimals.contains(animalType)) {
             packAnimalDB.add(new PackAnimal(animalName, animalType, animalBIrthday));
-        } else throw new RuntimeException("We don't know this animal type");
+        } else throw new RuntimeException("We don't know this animal type\n");
     }
 
     public void addCommandToPet(String targetPetName, String commandName) {
         for (Pet pet : petDB.getDatabase()) {
-            if (pet.getAnimalName().equals(targetPetName)) {
+            if (pet.getAnimalName().equalsIgnoreCase(targetPetName)) {
                 pet.addCommand(new Command(commandName));
                 return;
             }
         }
-        throw new RuntimeException("Pet not found");
+        throw new RuntimeException("Pet not found\n");
     }
 
     public void addCommandToPackAnimal(String targetPackAnimalName, String commandName) {
         for (PackAnimal packAnimal : packAnimalDB.getDatabase()) {
-            if (packAnimal.getAnimalName().equals(targetPackAnimalName)) {
+            if (packAnimal.getAnimalName().equalsIgnoreCase(targetPackAnimalName)) {
                 packAnimal.addCommand(new Command(commandName));
                 return;
             }
         }
-        throw new RuntimeException("Pack animal not found");
+        throw new RuntimeException("Pack animal not found\n");
     }
 
     private Pet findPetByName(String targetPetName) {
         for (Pet pet : petDB.getDatabase()) {
-            if (pet.getAnimalName().equals(targetPetName)) {
+            if (pet.getAnimalName().equalsIgnoreCase(targetPetName)) {
                 return pet;
             }
         }
-        throw new RuntimeException("Pet not found");
+        throw new RuntimeException("Pet not found\n");
     }
 
     private PackAnimal findPackAnimalByName(String targetPackAnimalName) {
         for (PackAnimal packAnimal : packAnimalDB.getDatabase()) {
-            if (packAnimal.getAnimalName().equals(targetPackAnimalName)) {
+            if (packAnimal.getAnimalName().equalsIgnoreCase(targetPackAnimalName)) {
                 return packAnimal;
             }
         }
-        throw new RuntimeException("Pack animal not found");
+        throw new RuntimeException("Pack animal not found\n");
     }
 
     public ArrayList<Command> getPetCommands(String petName) {
@@ -103,7 +103,7 @@ public class Registry {
             try (BufferedReader bR = new BufferedReader(new FileReader(fileName))) {
                 return bR.readLine();
             } catch (IOException e) {
-                throw new RuntimeException("Something went wrong...");
+                throw new RuntimeException("Something went wrong...\n");
             }
         }
 

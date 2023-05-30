@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Controller {
-    Registry registry;
+    private Registry registry;
 
     public Controller(Registry registry) {
         this.registry = registry;

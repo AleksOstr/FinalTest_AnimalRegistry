@@ -5,7 +5,7 @@ public class Counter implements AutoCloseable{
 
     public void addCount() {
         count++;
-        System.out.printf("Animals count: %d", count);
+        System.out.printf("Animals count: %d\n", count);
     }
 
     @Override
