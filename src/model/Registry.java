@@ -10,6 +10,7 @@ import model.animals.Pet;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,13 +35,13 @@ public class Registry {
         packAnimalDB.showDatabase();
     }
 
-    public void addNewAnimal(Animal animal) {
+    public void addNewAnimal(String animalName, String animalType, LocalDate animalBIrthday) {
         ArrayList<String> availablePets = reader.getAvailablePets();
         ArrayList<String> availablePackAnimals = reader.getAvailablePackAnimals();
-        if (availablePets.contains(animal.getAnimalType())) {
-            petDB.add(new Pet(animal.getAnimalName(), animal.getAnimalType(), animal.getAnimalBirthday()));
-        } else if (availablePackAnimals.contains(animal.getAnimalType())) {
-            packAnimalDB.add(new PackAnimal(animal.getAnimalName(), animal.getAnimalType(), animal.getAnimalBirthday()));
+        if (availablePets.contains(animalType)) {
+            petDB.add(new Pet(animalName, animalType, animalBIrthday));
+        } else if (availablePackAnimals.contains(animalType)) {
+            packAnimalDB.add(new PackAnimal(animalName, animalType, animalBIrthday));
         } else throw new RuntimeException("We don't know this animal type");
     }
 
